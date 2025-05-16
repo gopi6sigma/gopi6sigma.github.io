@@ -34,8 +34,8 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONSTANTS", function() { return CONSTANTS; });
 const CONSTANTS = {
-    BASE_URL: "https://sadisha-be2.el.r.appspot.com",
-    //BASE_URL: "http://localhost:8080",
+    //BASE_URL: "https://sadisha-be2.el.r.appspot.com",
+    BASE_URL: "http://localhost:8080",
     QUESTION_PAPERS: "5ec89bb82f0000d244db705a",
     FETCH_QUESTIONS: "contests/blah",
     QUESTIONS: "questionPaper",
@@ -3140,7 +3140,7 @@ class StudentEditComponent {
         this.studentsForm = this.fb.group({
             studentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             parentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
-            studentClass: ["10th Class", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            //studentClass: ["10th Class", Validators.required], commenting this validator as it's not required currently
             gender: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             zone: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             mandal: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -3404,7 +3404,7 @@ StudentEditComponent.ɵfac = function StudentEditComponent_Factory(t) { return n
 StudentEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudentEditComponent, selectors: [["app-student-edit"]], decls: 9, vars: 3, consts: [[1, "page"], [1, "page-header", "primary-text", "f-22", "m-t-5", "m-b-20", "font-italic"], [1, "page-content"], ["class", "student-field", 4, "ngIf"], [4, "ngIf"], ["class", "container-fluid", 4, "ngIf"], ["content1", ""], [1, "student-field"], [3, "submit"], [1, "container-fluid"], [1, "row"], [1, "form-group", "col-12", "col-sm-6", "col-md-4"], [1, "label"], [1, "required-star"], [1, "input-group", "w-100"], ["type", "text", "name", "studentId", "id", "studentName", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "input-group-append"], ["type", "submit", 1, "my-btn", "my-btn-primary", "ml-3", 3, "disabled"], [3, "formGroup", "submit"], ["type", "text", "formControlName", "userName", "id", "studentUserName", "readonly", "", 1, "form-control"], ["type", "text", "formControlName", "studentName", "id", "studentName", 1, "form-control"], ["class", "f-14 error-message", 4, "ngIf"], ["type", "text", "formControlName", "parentName", "id", "parentName", 1, "form-control"], ["formControlName", "gender", "id", "gender", "name", "gender", 3, "items", "clearable"], ["formControlName", "zone", "id", "zone", "name", "zone", "bindLabel", "name", 3, "items", "clearable", "change"], ["formControlName", "mandal", "id", "mandal", "name", "mandal", "bindLabel", "name", 3, "items", "clearable", "change"], ["formControlName", "schoolName", "id", "schoolName", "name", "schoolName", 3, "items", "clearable"], ["type", "text", "numbersOnly", "", "maxlength", "10", "minlength", "10", "formControlName", "contactNumber", "id", "contactNumber", 1, "form-control"], [1, "f-14", "error-message"], ["type", "text", "numbersOnly", "", "maxlength", "10", "minlength", "10", "formControlName", "secondaryContact", "id", "secondaryContact", 1, "form-control"], [1, "m-t-28", "text-center"], ["type", "submit", 1, "my-btn", "my-btn-primary", 3, "disabled"], ["type", "button", 1, "my-btn", "cancel-btn", "m-l-28", 3, "click"], ["type", "button", 1, "my-btn", "my-btn-danger", "m-l-28", "mr-2", 3, "disabled", "click"], ["type", "button", 1, "my-btn", "my-btn-danger", "mr-2", 3, "disabled", "click"], [1, "col-md-12", "animated", "rotateInUpLeft"], [1, "card", "w-100", "m-auto"], [1, "text-center"], [1, "card-body"], [1, "table-responsive"], [1, "table", "text-center"], [1, "table-dark"], [3, "ngClass", 4, "ngFor", "ngForOf"], [3, "ngClass"], [1, "hover", 3, "click"], [1, "img-path"], [1, "modal-header", "border-bottom-0"], ["type", "button", "aria-label", "Close", 1, "close", 3, "click"], ["aria-hidden", "true", 1, "close-icon"], [1, "container-fluid", 2, "padding", "24px"], [1, "row", "justify-content-center"], [1, "col-10", "text-center"], [1, "modal-msg"], [1, "d-flex", "justify-content-center", "pb-2", "mt-3"], [1, "text-black-50", "btn", "btn-light", "rounded-pill", "hover", 2, "font-weight", "400", "border", "1px solid grey", 3, "click"], [1, "text-white", "rounded-pill", "btn", "btn-danger", "hover", 2, "font-weight", "400", 3, "click"]], template: function StudentEditComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Update student details ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Edit student ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, StudentEditComponent_div_4_Template, 14, 2, "div", 3);

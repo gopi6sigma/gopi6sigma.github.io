@@ -52,8 +52,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     });
 
     var CONSTANTS = {
-      BASE_URL: "https://sadisha-be2.el.r.appspot.com",
-      //BASE_URL: "http://localhost:8080",
+      //BASE_URL: "https://sadisha-be2.el.r.appspot.com",
+      BASE_URL: "http://localhost:8080",
       QUESTION_PAPERS: "5ec89bb82f0000d244db705a",
       FETCH_QUESTIONS: "contests/blah",
       QUESTIONS: "questionPaper",
@@ -5290,7 +5290,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.studentsForm = this.fb.group({
             studentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             parentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
-            studentClass: ["10th Class", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            //studentClass: ["10th Class", Validators.required], commenting this validator as it's not required currently
             gender: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             zone: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             mandal: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -5654,7 +5654,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Update student details ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Edit student ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
