@@ -68,9 +68,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       STUDENTS: "students",
       GET_STUDENT: "student",
       REGISTER_VOLUNTEER: "volunteerRegister",
+      COMPUTE_FINAL_RESULTS: "computeFinalResults",
       GALLERY: "gallery",
       GALLERY_EDIT: "galleryEdit",
       USERS: "users",
+      ZONES: "zones",
       STUDENTS_STATS: "studentsMap",
       UPLOAD_PHOTO: "uploadPhoto",
       UPLOAD_PAPER: "uploadPaperUsingSignedUrl",
@@ -869,6 +871,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             })
           };
           return this.httpClient.post(apiUrl, payload, httpOptions);
+        }
+      }, {
+        key: "computeFinalResults",
+        value: function computeFinalResults(payload) {
+          var apiUrl = "".concat(this.baseUrl, "/").concat(_api_constant__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].COMPUTE_FINAL_RESULTS); // payload["roles"] = ["SUPER-ADMIN"];
+
+          var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+              "Content-Type": "application/json"
+            })
+          };
+          return this.httpClient.post(apiUrl, payload, httpOptions);
+        }
+      }, {
+        key: "getZones",
+        value: function getZones() {
+          var apiUrl = "".concat(this.baseUrl, "/").concat(_api_constant__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].ZONES);
+          var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+              "Content-Type": "application/json",
+              auth_token: this.token
+            })
+          };
+          return this.httpClient.get(apiUrl, httpOptions);
         }
       }, {
         key: "updateStudent",
@@ -2431,15 +2457,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/layout/compute-stats/compute-stats.component.ts": function srcAppLayoutComputeStatsComputeStatsComponentTs(module, __webpack_exports__, __webpack_require__) {
+  "./src/app/layout/compute-final-results/compute-final-results.component.ts": function srcAppLayoutComputeFinalResultsComputeFinalResultsComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ComputeStatsComponent", function () {
-      return ComputeStatsComponent;
+    __webpack_require__.d(__webpack_exports__, "ComputeFinalResultsComponent", function () {
+      return ComputeFinalResultsComponent;
     });
     /* harmony import */
 
@@ -2459,167 +2485,261 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
 
-    function ComputeStatsComponent_div_3_Template(rf, ctx) {
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    function ComputeFinalResultsComponent_tr_14_Template(rf, ctx) {
       if (rf & 1) {
-        var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Type \"compute stats\" to confirm:\xA0");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "input", 3, 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "input", 2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComputeStatsComponent_div_3_Template_button_click_5_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ComputeFinalResultsComponent_tr_14_Template_input_ngModelChange_4_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
-          var _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](4);
+          var zone_r1 = ctx.$implicit;
 
-          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r3.computeStats(_r2.value);
+          return ctx_r2.config[zone_r1.id].open = $event;
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Confirm");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " \xA0 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "input", 2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComputeStatsComponent_div_3_Template_button_click_8_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ComputeFinalResultsComponent_tr_14_Template_input_ngModelChange_6_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+
+          var zone_r1 = ctx.$implicit;
+
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r4.config[zone_r1.id].zphs = $event;
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "td");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "input", 2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ComputeFinalResultsComponent_tr_14_Template_input_ngModelChange_8_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+
+          var zone_r1 = ctx.$implicit;
 
           var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r5.computeStatsCancel();
+          return ctx_r5.config[zone_r1.id].girls = $event;
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Cancel");
-
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      }
-    }
-
-    function ComputeStatsComponent_div_4_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Compute Stats executed successfully!");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
+
+      if (rf & 2) {
+        var zone_r1 = ctx.$implicit;
+
+        var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](zone_r1.zoneName);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r0.config[zone_r1.id].open);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r0.config[zone_r1.id].zphs);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r0.config[zone_r1.id].girls);
+      }
     }
 
-    var ComputeStatsComponent = /*#__PURE__*/function () {
-      function ComputeStatsComponent(apiService) {
-        _classCallCheck(this, ComputeStatsComponent);
+    var ComputeFinalResultsComponent = /*#__PURE__*/function () {
+      function ComputeFinalResultsComponent(apiService) {
+        _classCallCheck(this, ComputeFinalResultsComponent);
 
         this.apiService = apiService;
-        this.trigger = false;
-        this.success = false;
+        this.zones = [];
+        this.config = {};
       }
 
-      _createClass(ComputeStatsComponent, [{
+      _createClass(ComputeFinalResultsComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
-      }, {
-        key: "computeStatsTrigger",
-        value: function computeStatsTrigger() {
-          this.trigger = true;
-          console.log('computeStatsTrigger');
+        value: function ngOnInit() {
+          this.loadZones();
         }
       }, {
-        key: "computeStatsCancel",
-        value: function computeStatsCancel() {
-          this.trigger = false;
-          console.log('computeStatsCancel');
-        }
-      }, {
-        key: "computeStats",
-        value: function computeStats(inText) {
+        key: "loadZones",
+        value: function loadZones() {
           var _this2 = this;
 
-          console.log("Computing Stats....");
+          this.apiService.getZones().subscribe(function (res) {
+            console.log(res);
+            _this2.zones = res;
 
-          if (inText == "compute stats") {
-            this.apiService.computeStats().subscribe(function (res) {
-              console.log(res);
-
-              if (res === "Done") {
-                console.log("Stats computed successfully");
-                _this2.success = true;
-              }
+            _this2.zones.forEach(function (zone) {
+              _this2.config[zone.id] = {
+                open: 0,
+                zphs: 0,
+                girls: 0
+              };
             });
-          }
+          }, function (err) {
+            console.error("Failed to fetch zones", err);
+            alert("Failed to load zones.");
+          });
+        }
+      }, {
+        key: "saveConfiguration",
+        value: function saveConfiguration() {
+          var _this3 = this;
+
+          var payload = this.zones.map(function (zone) {
+            var _a, _b, _c;
+
+            return {
+              zone: zone.zoneName,
+              open: ((_a = _this3.config[zone.id]) === null || _a === void 0 ? void 0 : _a.open) || 0,
+              zphs: ((_b = _this3.config[zone.id]) === null || _b === void 0 ? void 0 : _b.zphs) || 0,
+              girls: ((_c = _this3.config[zone.id]) === null || _c === void 0 ? void 0 : _c.girls) || 0
+            };
+          });
+          console.log(payload);
+          this.apiService.computeFinalResults(payload).subscribe(function (res) {
+            if (res === 'Done') {
+              alert('Configuration saved successfully!');
+            } else {
+              alert('Failed to save configuration.');
+            }
+          }, function (err) {
+            console.error("Error saving config", err);
+            alert("Error while sending data to server.");
+          });
         }
       }]);
 
-      return ComputeStatsComponent;
+      return ComputeFinalResultsComponent;
     }();
 
-    ComputeStatsComponent.ɵfac = function ComputeStatsComponent_Factory(t) {
-      return new (t || ComputeStatsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]));
+    ComputeFinalResultsComponent.ɵfac = function ComputeFinalResultsComponent_Factory(t) {
+      return new (t || ComputeFinalResultsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]));
     };
 
-    ComputeStatsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: ComputeStatsComponent,
-      selectors: [["app-compute-stats"]],
-      decls: 5,
-      vars: 2,
-      consts: [["type", "button", 1, "my-btn", "my-btn-primary", 3, "click"], [4, "ngIf"], ["for", "confirmationText"], ["name", "confirmationText", "placeholder", "compute stats"], ["inText", ""], ["type", "button", 1, "my-btn", 3, "click"]],
-      template: function ComputeStatsComponent_Template(rf, ctx) {
+    ComputeFinalResultsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: ComputeFinalResultsComponent,
+      selectors: [["app-compute-final-results"]],
+      decls: 17,
+      vars: 1,
+      consts: [[4, "ngFor", "ngForOf"], [3, "click"], ["type", "number", "min", "0", 3, "ngModel", "ngModelChange"]],
+      template: function ComputeFinalResultsComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Zone-Wise Seat Allocation ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComputeStatsComponent_Template_button_click_1_listener() {
-            return ctx.computeStatsTrigger();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "table");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "thead");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "tr");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "th");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "ZONE");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "th");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "OPEN");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "th");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "ZPHS");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "th");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "ZPHS GIRLS");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "tbody");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ComputeFinalResultsComponent_tr_14_Template, 9, 4, "tr", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComputeFinalResultsComponent_Template_button_click_15_listener() {
+            return ctx.saveConfiguration();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Compute Stats");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Save To File");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ComputeStatsComponent_div_3_Template, 10, 0, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ComputeStatsComponent_div_4_Template, 2, 0, "div", 1);
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.trigger);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.success && ctx.trigger);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.zones);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheW91dC9jb21wdXRlLXN0YXRzL2NvbXB1dGUtc3RhdHMuY29tcG9uZW50LnNjc3MifQ== */"]
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"]],
+      styles: ["table[_ngcontent-%COMP%] {\n  width: 100%;\n  border-collapse: collapse;\n}\n\nth[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 10px;\n  border: 1px solid #ccc;\n  text-align: center;\n}\n\ninput[type=number][_ngcontent-%COMP%] {\n  width: 60px;\n  padding: 5px;\n}\n\nbutton[_ngcontent-%COMP%] {\n  margin: 10px 5px;\n  padding: 10px 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zcmF2YW5pYmFsbmUvRG9jdW1lbnRzL3NhZGlzaGEvbXR0LXVpL3NyYy9hcHAvbGF5b3V0L2NvbXB1dGUtZmluYWwtcmVzdWx0cy9jb21wdXRlLWZpbmFsLXJlc3VsdHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2xheW91dC9jb21wdXRlLWZpbmFsLXJlc3VsdHMvY29tcHV0ZS1maW5hbC1yZXN1bHRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLHlCQUFBO0FDQ0o7O0FEQ0U7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxrQkFBQTtBQ0VKOztBREFFO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUNHSjs7QURERTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7QUNJSiIsImZpbGUiOiJzcmMvYXBwL2xheW91dC9jb21wdXRlLWZpbmFsLXJlc3VsdHMvY29tcHV0ZS1maW5hbC1yZXN1bHRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIH1cbiAgdGgsIHRkIHtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB9XG4gIGlucHV0W3R5cGU9XCJudW1iZXJcIl0ge1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIHBhZGRpbmc6IDVweDtcbiAgfVxuICBidXR0b24ge1xuICAgIG1hcmdpbjogMTBweCA1cHg7XG4gICAgcGFkZGluZzogMTBweCAxNXB4O1xuICB9XG4gICIsInRhYmxlIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG59XG5cbnRoLCB0ZCB7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuaW5wdXRbdHlwZT1udW1iZXJdIHtcbiAgd2lkdGg6IDYwcHg7XG4gIHBhZGRpbmc6IDVweDtcbn1cblxuYnV0dG9uIHtcbiAgbWFyZ2luOiAxMHB4IDVweDtcbiAgcGFkZGluZzogMTBweCAxNXB4O1xufSJdfQ== */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ComputeStatsComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ComputeFinalResultsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-compute-stats',
-          templateUrl: './compute-stats.component.html',
-          styleUrls: ['./compute-stats.component.scss']
+          selector: 'app-compute-final-results',
+          templateUrl: './compute-final-results.component.html',
+          styleUrls: ['./compute-final-results.component.scss']
         }]
       }], function () {
         return [{
@@ -2877,6 +2997,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.apiService = apiService;
         this.isSideNavOpened = false;
+        this.isRegisterDropdownOpen = false;
+        this.isMenuOpen = false;
         this.userDetails = {};
       }
 
@@ -2888,7 +3010,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function logOut() {}
       }, {
         key: "toggleMenu",
-        value: function toggleMenu() {
+        value: function toggleMenu(event) {
+          event.preventDefault(); // 👈 This prevents the default anchor behavior
+
+          this.isMenuOpen = !this.isMenuOpen;
           var mainNavBar = document.querySelector('.main-navbar');
           var menuEle = document.querySelector('#menuDropdown');
 
@@ -2906,6 +3031,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "toggleSideNav",
         value: function toggleSideNav() {// this.apiService.sideNavOpened.next(!this.isSideNavOpened);
         }
+      }, {
+        key: "toggleRegisterDropdown",
+        value: function toggleRegisterDropdown(event) {
+          event.preventDefault(); // 👈 This prevents the default anchor behavior
+
+          this.isRegisterDropdownOpen = !this.isRegisterDropdownOpen;
+        }
       }]);
 
       return HeaderComponent;
@@ -2919,8 +3051,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       type: HeaderComponent,
       selectors: [["app-header"]],
       decls: 40,
-      vars: 18,
-      consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "header", "container-fluid", "main-navbar"], ["type", "button", "data-toggle", "collapse", "data-target", "#menuDropdown", "aria-controls", "menuDropdown", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler", 3, "click"], [1, "navbar-toggler-icon"], ["href", "http://sadisha.org/", 1, "navbar-brand", "logo"], ["src", "assets/images/sadisha.png", "alt", "Logo", 1, "img-fluid", "logo-img"], ["id", "menuDropdown", 1, "collapse", "navbar-collapse", "justify-content-end"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["routerLinkActive", "active", 1, "nav-item", "px-12", "mx-4"], [1, "nav-link", 3, "routerLink"], ["routerLinkActive", "active", 1, "nav-item", "dropdown", "px-12", "mx-4"], ["href", "#", "id", "navbarDropdown", "role", "button", "data-toggle", "dropdown", "aria-haspopup", "true", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle"], ["aria-labelledby", "navbarDropdown", 1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [1, "dropdown-divider"]],
+      vars: 24,
+      consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "header", "container-fluid", "main-navbar"], ["type", "button", "aria-controls", "menuDropdown", "aria-label", "Toggle navigation", 1, "navbar-toggler", 3, "click"], [1, "navbar-toggler-icon"], ["href", "http://sadisha.org/", 1, "navbar-brand", "logo"], ["src", "assets/images/sadisha.png", "alt", "Logo", 1, "img-fluid", "logo-img"], ["id", "menuDropdown", 1, "collapse", "navbar-collapse", "justify-content-end"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["routerLinkActive", "active", 1, "nav-item", "px-12", "mx-4"], [1, "nav-link", 3, "routerLink", "click"], ["routerLinkActive", "active", 1, "nav-item", "dropdown", "px-12", "mx-4"], ["href", "#", "role", "button", 1, "nav-link", "dropdown-toggle", 3, "click"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink", "click"], [1, "dropdown-divider"]],
       template: function HeaderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -2931,8 +3063,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_button_click_3_listener() {
-            return ctx.toggleMenu();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_button_click_3_listener($event) {
+            return ctx.toggleMenu($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "span", 2);
@@ -2955,6 +3087,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 8);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_11_listener($event) {
+            return ctx.toggleMenu($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " Home ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2965,6 +3101,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 10);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_14_listener($event) {
+            return ctx.toggleRegisterDropdown($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " REGISTER ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2973,6 +3113,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 12);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_17_listener($event) {
+            return ctx.toggleRegisterDropdown($event);
+          })("click", function HeaderComponent_Template_a_click_17_listener($event) {
+            return ctx.toggleMenu($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "As a Student");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2980,6 +3126,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "div", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "a", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_20_listener($event) {
+            return ctx.toggleRegisterDropdown($event);
+          })("click", function HeaderComponent_Template_a_click_20_listener($event) {
+            return ctx.toggleMenu($event);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "As a Volunteer");
 
@@ -2993,6 +3145,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 8);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_23_listener($event) {
+            return ctx.toggleMenu($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, " FAQ ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3002,6 +3158,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "li", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "a", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_26_listener($event) {
+            return ctx.toggleMenu($event);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, " MATHS TALENT TEST ");
 
@@ -3013,6 +3173,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "a", 8);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_29_listener($event) {
+            return ctx.toggleMenu($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, " GALLERY ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3022,6 +3186,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "li", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "a", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_32_listener($event) {
+            return ctx.toggleMenu($event);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, " PRESS ");
 
@@ -3033,6 +3201,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "a", 8);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_35_listener($event) {
+            return ctx.toggleMenu($event);
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, " CONTACT US ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3042,6 +3214,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "li", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "a", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_38_listener($event) {
+            return ctx.toggleMenu($event);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, " SIGN IN ");
 
@@ -3061,41 +3237,57 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c0));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isMenuOpen);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c1));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("show", ctx.isMenuOpen);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](15, _c0));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c2));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isRegisterDropdownOpen);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("show", ctx.isRegisterDropdownOpen);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](16, _c1));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](12, _c3));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](17, _c2));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](13, _c4));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](18, _c3));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](14, _c5));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](19, _c4));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](15, _c6));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c5));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](16, _c7));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](21, _c6));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](17, _c8));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](22, _c7));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](23, _c8));
         }
       },
       directives: [_address_nav_header_address_nav_header_component__WEBPACK_IMPORTED_MODULE_2__["AddressNavHeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkActive"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"]],
@@ -3335,9 +3527,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _compute_stats_compute_stats_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
-    /*! ./compute-stats/compute-stats.component */
-    "./src/app/layout/compute-stats/compute-stats.component.ts");
+    var _compute_final_results_compute_final_results_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! ./compute-final-results/compute-final-results.component */
+    "./src/app/layout/compute-final-results/compute-final-results.component.ts");
 
     var routes = [{
       path: '',
@@ -3358,8 +3550,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         path: 'student-stats',
         component: _student_stats_student_stats_component__WEBPACK_IMPORTED_MODULE_13__["StudentStatsComponent"]
       }, {
-        path: 'compute-stats',
-        component: _compute_stats_compute_stats_component__WEBPACK_IMPORTED_MODULE_14__["ComputeStatsComponent"]
+        path: 'compute-final-results',
+        component: _compute_final_results_compute_final_results_component__WEBPACK_IMPORTED_MODULE_14__["ComputeFinalResultsComponent"]
       }, {
         path: 'paper-upload',
         loadChildren: function loadChildren() {
@@ -3445,7 +3637,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](LayoutModule, {
-        declarations: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _layout_wrapper_layout_wrapper_component__WEBPACK_IMPORTED_MODULE_6__["LayoutWrapperComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"], _admin_landing_admin_landing_component__WEBPACK_IMPORTED_MODULE_8__["AdminLandingComponent"], _student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_9__["StudentEditComponent"], _student_modal_student_modal_component__WEBPACK_IMPORTED_MODULE_10__["StudentModalComponent"], _role_management_role_management_component__WEBPACK_IMPORTED_MODULE_11__["RoleManagementComponent"], _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_12__["UserManagementComponent"], _student_stats_student_stats_component__WEBPACK_IMPORTED_MODULE_13__["StudentStatsComponent"], _compute_stats_compute_stats_component__WEBPACK_IMPORTED_MODULE_14__["ComputeStatsComponent"]],
+        declarations: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _layout_wrapper_layout_wrapper_component__WEBPACK_IMPORTED_MODULE_6__["LayoutWrapperComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"], _admin_landing_admin_landing_component__WEBPACK_IMPORTED_MODULE_8__["AdminLandingComponent"], _student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_9__["StudentEditComponent"], _student_modal_student_modal_component__WEBPACK_IMPORTED_MODULE_10__["StudentModalComponent"], _role_management_role_management_component__WEBPACK_IMPORTED_MODULE_11__["RoleManagementComponent"], _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_12__["UserManagementComponent"], _student_stats_student_stats_component__WEBPACK_IMPORTED_MODULE_13__["StudentStatsComponent"], _compute_final_results_compute_final_results_component__WEBPACK_IMPORTED_MODULE_14__["ComputeFinalResultsComponent"]],
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]],
         exports: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"]]
       });
@@ -3457,7 +3649,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LayoutModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _layout_wrapper_layout_wrapper_component__WEBPACK_IMPORTED_MODULE_6__["LayoutWrapperComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"], _admin_landing_admin_landing_component__WEBPACK_IMPORTED_MODULE_8__["AdminLandingComponent"], _student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_9__["StudentEditComponent"], _student_modal_student_modal_component__WEBPACK_IMPORTED_MODULE_10__["StudentModalComponent"], _role_management_role_management_component__WEBPACK_IMPORTED_MODULE_11__["RoleManagementComponent"], _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_12__["UserManagementComponent"], _student_stats_student_stats_component__WEBPACK_IMPORTED_MODULE_13__["StudentStatsComponent"], _compute_stats_compute_stats_component__WEBPACK_IMPORTED_MODULE_14__["ComputeStatsComponent"]],
+          declarations: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _layout_wrapper_layout_wrapper_component__WEBPACK_IMPORTED_MODULE_6__["LayoutWrapperComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"], _admin_landing_admin_landing_component__WEBPACK_IMPORTED_MODULE_8__["AdminLandingComponent"], _student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_9__["StudentEditComponent"], _student_modal_student_modal_component__WEBPACK_IMPORTED_MODULE_10__["StudentModalComponent"], _role_management_role_management_component__WEBPACK_IMPORTED_MODULE_11__["RoleManagementComponent"], _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_12__["UserManagementComponent"], _student_stats_student_stats_component__WEBPACK_IMPORTED_MODULE_13__["StudentStatsComponent"], _compute_final_results_compute_final_results_component__WEBPACK_IMPORTED_MODULE_14__["ComputeFinalResultsComponent"]],
           entryComponents: [_student_modal_student_modal_component__WEBPACK_IMPORTED_MODULE_10__["StudentModalComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]],
           exports: [_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_2__["SideNavComponent"], _admin_header_admin_header_component__WEBPACK_IMPORTED_MODULE_7__["AdminHeaderComponent"]]
@@ -3938,7 +4130,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SideNavComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.userRoles = this.apiService.getRole();
           var allNavLinks = [{
@@ -3985,8 +4177,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             },
             icon: ""
           }, {
-            name: "Compute Stats",
-            link: ["/admin/compute-stats"],
+            name: "Compute Final Results",
+            link: ["/admin/compute-final-results"],
             isQuery: false,
             icon: ""
           }];
@@ -4013,8 +4205,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
 
           this.apiService.sideNavOpened.subscribe(function (flag) {
-            if (_this3.isSideNavOpened !== flag) {
-              _this3.isSideNavOpened = flag;
+            if (_this4.isSideNavOpened !== flag) {
+              _this4.isSideNavOpened = flag;
             }
           });
           this.rolesList = this.apiService.rolesList;
@@ -5048,7 +5240,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var StudentEditComponent = /*#__PURE__*/function () {
       function StudentEditComponent(apiService, fb, dialog, modalService, config, router, activatedRoute) {
-        var _this4 = this;
+        var _this5 = this;
 
         _classCallCheck(this, StudentEditComponent);
 
@@ -5079,7 +5271,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.isStudentDetails = false;
         this.selectedIndex = 0;
         this.activatedRoute.queryParams.subscribe(function (params) {
-          _this4.isStudentDetails = params.isdetails === "true";
+          _this5.isStudentDetails = params.isdetails === "true";
         });
         this.isStudentDetails && this.getRandomStudent();
       }
@@ -5098,7 +5290,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.studentsForm = this.fb.group({
             studentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             parentName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
-            studentClass: ["10th Class", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            //studentClass: ["10th Class", Validators.required], commenting this validator as it's not required currently
             gender: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             zone: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             mandal: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
@@ -5123,56 +5315,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "confirmDelete",
         value: function confirmDelete() {
-          var _this5 = this;
-
-          this.apiService.showLoader.next(true);
-          this.apiService.deleteStudent(this.studentId).subscribe(function (res) {
-            _this5.apiService.showLoader.next(false);
-
-            var responce = JSON.parse(res);
-
-            _this5.apiService.genericMessage(responce.message, "success");
-
-            _this5.modalService.dismissAll();
-
-            _this5.showEditForm = false;
-          }, function (err) {
-            _this5.apiService.showLoader.next(false);
-
-            _this5.modalService.dismissAll();
-
-            if (err.status === 401) {
-              _this5.router.navigate(["/login"]);
-
-              return;
-            }
-
-            if (err.error) {
-              var serverError = typeof err.error === "string" ? JSON.parse(err.error) : {};
-
-              _this5.apiService.genericMessage(serverError.error || "something went wrong", "error");
-            }
-
-            console.log(err);
-          });
-        }
-      }, {
-        key: "clearAnswers",
-        value: function clearAnswers(content) {
-          this.isClearAns = true;
-          this.alertMsg = "Do You want to clear this Student answers";
-          this.modalService.open(content);
-        }
-      }, {
-        key: "confirmClearAns",
-        value: function confirmClearAns() {
           var _this6 = this;
 
           this.apiService.showLoader.next(true);
-          this.apiService.clearStudentAns(this.studentId).subscribe(function (res) {
+          this.apiService.deleteStudent(this.studentId).subscribe(function (res) {
             _this6.apiService.showLoader.next(false);
 
-            _this6.apiService.genericMessage(res, "success");
+            var responce = JSON.parse(res);
+
+            _this6.apiService.genericMessage(responce.message, "success");
 
             _this6.modalService.dismissAll();
 
@@ -5192,6 +5343,47 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               var serverError = typeof err.error === "string" ? JSON.parse(err.error) : {};
 
               _this6.apiService.genericMessage(serverError.error || "something went wrong", "error");
+            }
+
+            console.log(err);
+          });
+        }
+      }, {
+        key: "clearAnswers",
+        value: function clearAnswers(content) {
+          this.isClearAns = true;
+          this.alertMsg = "Do You want to clear this Student answers";
+          this.modalService.open(content);
+        }
+      }, {
+        key: "confirmClearAns",
+        value: function confirmClearAns() {
+          var _this7 = this;
+
+          this.apiService.showLoader.next(true);
+          this.apiService.clearStudentAns(this.studentId).subscribe(function (res) {
+            _this7.apiService.showLoader.next(false);
+
+            _this7.apiService.genericMessage(res, "success");
+
+            _this7.modalService.dismissAll();
+
+            _this7.showEditForm = false;
+          }, function (err) {
+            _this7.apiService.showLoader.next(false);
+
+            _this7.modalService.dismissAll();
+
+            if (err.status === 401) {
+              _this7.router.navigate(["/login"]);
+
+              return;
+            }
+
+            if (err.error) {
+              var serverError = typeof err.error === "string" ? JSON.parse(err.error) : {};
+
+              _this7.apiService.genericMessage(serverError.error || "something went wrong", "error");
             }
 
             console.log(err);
@@ -5223,20 +5415,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getStudentDetails",
         value: function getStudentDetails() {
-          var _this7 = this;
+          var _this8 = this;
 
           this.apiService.showLoader.next(true);
 
           try {
             this.apiService.getStudentDetails(this.studentId).subscribe(function (res) {
-              _this7.apiService.showLoader.next(false);
+              _this8.apiService.showLoader.next(false);
 
-              _this7.showStudentDetails(res);
+              _this8.showStudentDetails(res);
             }, function (err) {
-              _this7.apiService.showLoader.next(false);
+              _this8.apiService.showLoader.next(false);
 
               if (err.status === 401) {
-                _this7.router.navigateByUrl("/login");
+                _this8.router.navigateByUrl("/login");
               } else {
                 console.warn(err.message);
               }
@@ -5280,48 +5472,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllSchools",
         value: function getAllSchools() {
-          var _this8 = this;
-
-          try {
-            this.apiService.showLoader.next(true);
-            this.apiService.getListOfSchools().subscribe(function (res) {
-              _this8.apiService.showLoader.next(false);
-
-              if (res && Object.keys(res)) {
-                _this8.formatDistrictsData(res);
-              }
-            }, function (error) {
-              _this8.apiService.showLoader.next(false); // if (error.status === 401) {
-              //   this.router.navigate(['/login']);
-              //   return;
-              // }
-
-
-              if (error.error) {
-                var serverError = typeof error.error === "string" ? JSON.parse(error.error) : {};
-
-                _this8.apiService.genericMessage(serverError.error || "something went wrong", "error");
-              }
-
-              console.log(error);
-            });
-          } catch (e) {
-            console.warn(e);
-          }
-        }
-      }, {
-        key: "getRandomStudent",
-        value: function getRandomStudent() {
           var _this9 = this;
 
           try {
             this.apiService.showLoader.next(true);
-            this.apiService.getRandomStudent().subscribe(function (res) {
+            this.apiService.getListOfSchools().subscribe(function (res) {
               _this9.apiService.showLoader.next(false);
 
-              if (res) {
-                _this9.showStudentDetails(res); // this.formatDistrictsData(res);
-
+              if (res && Object.keys(res)) {
+                _this9.formatDistrictsData(res);
               }
             }, function (error) {
               _this9.apiService.showLoader.next(false); // if (error.status === 401) {
@@ -5343,9 +5502,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         }
       }, {
+        key: "getRandomStudent",
+        value: function getRandomStudent() {
+          var _this10 = this;
+
+          try {
+            this.apiService.showLoader.next(true);
+            this.apiService.getRandomStudent().subscribe(function (res) {
+              _this10.apiService.showLoader.next(false);
+
+              if (res) {
+                _this10.showStudentDetails(res); // this.formatDistrictsData(res);
+
+              }
+            }, function (error) {
+              _this10.apiService.showLoader.next(false); // if (error.status === 401) {
+              //   this.router.navigate(['/login']);
+              //   return;
+              // }
+
+
+              if (error.error) {
+                var serverError = typeof error.error === "string" ? JSON.parse(error.error) : {};
+
+                _this10.apiService.genericMessage(serverError.error || "something went wrong", "error");
+              }
+
+              console.log(error);
+            });
+          } catch (e) {
+            console.warn(e);
+          }
+        }
+      }, {
         key: "onSelectDistrict",
         value: function onSelectDistrict() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.mandalsList = [];
 
@@ -5357,7 +5549,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
 
           var selectedDist = this.districtsList.filter(function (val) {
-            return _this10.studentsForm.value.zone === val.name;
+            return _this11.studentsForm.value.zone === val.name;
           });
 
           if (selectedDist[0] && selectedDist[0].mandals) {
@@ -5379,7 +5571,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "updateStudent",
         value: function updateStudent() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.newStudent = {};
           this.formSubmitted = true;
@@ -5402,19 +5594,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.apiService.showLoader.next(true);
             this.apiService.updateStudent(payload, this.studentId).subscribe(function (res) {
               if (res) {
-                _this11.showForm = false;
-                _this11.newStudent = res;
+                _this12.showForm = false;
+                _this12.newStudent = res;
               }
 
-              _this11.apiService.showLoader.next(false);
+              _this12.apiService.showLoader.next(false);
 
-              _this11.apiService.genericMessage("Successfully registered!", "success");
+              _this12.apiService.genericMessage("Successfully registered!", "success");
 
-              _this11.resetForm();
+              _this12.resetForm();
 
-              _this11.isStudentDetails && _this11.getRandomStudent();
+              _this12.isStudentDetails && _this12.getRandomStudent();
             }, function (error) {
-              _this11.apiService.showLoader.next(false); // if (error.status === 401) {
+              _this12.apiService.showLoader.next(false); // if (error.status === 401) {
               //   this.router.navigate(['/login']);
               //   return;
               // }
@@ -5423,7 +5615,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (error.error) {
                 var serverError = typeof error.error === "string" ? JSON.parse(error.error) : {};
 
-                _this11.apiService.genericMessage(serverError.error || "something went wrong", "error");
+                _this12.apiService.genericMessage(serverError.error || "something went wrong", "error");
               }
 
               console.log(error);
@@ -5462,7 +5654,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Update student details ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Edit student ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -6091,11 +6283,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSelectMandal",
         value: function onSelectMandal() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.schoolsList = [];
           var selectedMandal = this.mandalsList.filter(function (val) {
-            return _this12.studentsForm.value.mandal === val.name;
+            return _this13.studentsForm.value.mandal === val.name;
           }); // const selectedMandal = this.studentsForm.value.mandal;
 
           if (selectedMandal && selectedMandal[0].schools) {
@@ -6414,17 +6606,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getStudentsStats",
         value: function getStudentsStats() {
-          var _this13 = this;
+          var _this14 = this;
 
           try {
             this.apiService.showLoader.next(true);
             this.apiService.getStudentsStats().subscribe(function (res) {
-              _this13.apiService.showLoader.next(false);
+              _this14.apiService.showLoader.next(false);
 
               console.log(res);
 
               if (res && Object.keys(res)) {
-                _this13.formatDistrictsData(res);
+                _this14.formatDistrictsData(res);
               }
             });
           } catch (error) {
@@ -6813,20 +7005,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllUsers",
         value: function getAllUsers() {
-          var _this14 = this;
+          var _this15 = this;
 
           try {
             this.apiService.showLoader.next(true);
             this.apiService.getAllUsers().subscribe(function (res) {
-              _this14.apiService.showLoader.next(false);
+              _this15.apiService.showLoader.next(false);
 
               if (res && res.length) {
-                _this14.allUsers = res;
-                _this14.allUsers = _this14.allUsers.map(function (val) {
+                _this15.allUsers = res;
+                _this15.allUsers = _this15.allUsers.map(function (val) {
                   val.assignedRoles = {};
                   val.isEdit = false;
 
-                  _this14.allRoles.forEach(function (role) {
+                  _this15.allRoles.forEach(function (role) {
                     if (val.userRoles && val.userRoles.indexOf(role) > -1) {
                       val.assignedRoles[role] = true;
                     } else {
@@ -6836,10 +7028,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
                   return val;
                 });
-                console.log('this.allUsers:', _this14.allUsers);
+                console.log('this.allUsers:', _this15.allUsers);
               }
             }, function (error) {
-              _this14.apiService.showLoader.next(false); // if (error.status === 401) {
+              _this15.apiService.showLoader.next(false); // if (error.status === 401) {
               //   this.router.navigate(['/login']);
               //   return;
               // }
@@ -6848,7 +7040,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (error.error) {
                 var serverError = typeof error.error === 'string' ? JSON.parse(error.error) : {};
 
-                _this14.apiService.genericMessage(serverError.error || 'something went wrong', 'error');
+                _this15.apiService.genericMessage(serverError.error || 'something went wrong', 'error');
               }
 
               console.log(error);
@@ -6869,7 +7061,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "updateRoles",
         value: function updateRoles(index, user) {
-          var _this15 = this;
+          var _this16 = this;
 
           try {
             var roles = [];
@@ -6882,16 +7074,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.apiService.updateUserRoles(user.userName, {
               roles: roles.join(',')
             }).subscribe(function (res) {
-              _this15.apiService.showLoader.next(false);
+              _this16.apiService.showLoader.next(false);
 
               console.log('res:', res);
-              _this15.allUsers[index].isEdit = false;
+              _this16.allUsers[index].isEdit = false;
 
-              _this15.getAllUsers();
+              _this16.getAllUsers();
 
               if (res && res.length) {}
             }, function (error) {
-              _this15.apiService.showLoader.next(false); // if (error.status === 401) {
+              _this16.apiService.showLoader.next(false); // if (error.status === 401) {
               //   this.router.navigate(['/login']);
               //   return;
               // }
@@ -6900,7 +7092,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (error.error) {
                 var serverError = typeof error.error === 'string' ? JSON.parse(error.error) : {};
 
-                _this15.apiService.genericMessage(serverError.error || 'something went wrong', 'error');
+                _this16.apiService.genericMessage(serverError.error || 'something went wrong', 'error');
               }
 
               console.log(error);
@@ -7137,13 +7329,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ForgotPswResponseComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this16 = this;
+          var _this17 = this;
 
           console.log('finally here it is'); // Retrieve the response data from the route parameter
 
           this.route.params.subscribe(function (params) {
             if (params.response) {
-              _this16.responseData = JSON.parse(params.response);
+              _this17.responseData = JSON.parse(params.response);
             }
           });
         }
@@ -7782,18 +7974,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AccordionComponent, [{
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this17 = this;
+          var _this18 = this;
 
           this.items.forEach(function (item) {
             item.toggleEmitter.subscribe(function (item) {
-              _this17.expand(item);
+              _this18.expand(item);
             });
           });
         }
       }, {
         key: "expand",
         value: function expand(item) {
-          var _this18 = this;
+          var _this19 = this;
 
           if (item == this.openChild && item.expanded) {
             return item.close();
@@ -7808,7 +8000,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
           this.items.filter(function (item) {
-            return item != _this18.openChild;
+            return item != _this19.openChild;
           }).map(function (item) {
             return item.close();
           });
@@ -8897,7 +9089,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(CommonAlertSnackComponent, [{
         key: "processData",
         set: function set(data) {
-          var _this19 = this;
+          var _this20 = this;
 
           this.data = data;
 
@@ -8909,7 +9101,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (this.data.duration) {
             setTimeout(function () {
-              _this19.closeAlert();
+              _this20.closeAlert();
             }, this.data.duration);
           }
         }
