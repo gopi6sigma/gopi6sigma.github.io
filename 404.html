@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sadisha Foundation</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/images/sadisha.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+  <meta name="description" content="Sadisha means Right Direction. We are a registered NGO and a passionate team of more than 150 people who want to address countless problems in rural India." />
+	<meta name="keywords" content="Sadisha,Right Direction, NGO" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="styles.5f07644c80a8e936de86.css"></head>
+<body>
+<style>
+  /* Intro screen styling */
+  .intro-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;  /* black background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 1s ease;
+    pointer-events: all; /* allow blocking during intro */
+  }
+
+  .intro-title {
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: zoomIn 1.5s ease;
+  }
+
+  .intro-tagline {
+    font-size: 28px;
+    color: #d8ad27;
+    margin-top: 20px;
+    font-weight: 300;
+    text-align: center;
+    animation: fadeSlideUp 2s ease;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fadeSlideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+</style>
+<div class="intro-container" id="intro">
+  <div class="intro-title">Sadisha</div>
+  <div class="intro-tagline">Dream. Grow. Serve.</div>
+</div>
+
+<script>
+  // Play intro only once per session
+  if (!sessionStorage.getItem("introPlayed")) {
+    sessionStorage.setItem("introPlayed", "true");
+
+    const intro = document.getElementById("intro");
+
+    // Remove intro after 5 seconds
+    setTimeout(() => {
+      intro.style.animation = "fadeOut 1s ease forwards";
+      intro.style.pointerEvents = "none"; // don’t block clicks after fade starts
+
+      setTimeout(() => {
+        intro.remove(); // remove completely after fade
+      }, 1000);
+    }, 5000);
+  } else {
+    // If already played, remove instantly
+    document.getElementById("intro")?.remove();
+  }
+</script>
+
+  <app-root></app-root>
+
+  <script>
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics_debug.js','ga');
+
+    window.ga_debug = {trace: true};
+    ga('create', 'xxxx-xxxx-xx', 'none');
+    ga('send', 'pageview');
+
+
+</script>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<script src="runtime-es2019.5e78fd393e0990b7fca6.js" type="module"></script><script src="runtime-es5.5e78fd393e0990b7fca6.js" nomodule defer></script><script src="polyfills-es5.6c6c1efe8bd0572d2210.js" nomodule defer></script><script src="polyfills-es2019.e5e094193fdfea4c150f.js" type="module"></script><script src="scripts.a70a96232d6a9f99d38d.js" defer></script><script src="main-es2019.23e95cdabbf8cc92e38c.js" type="module"></script><script src="main-es5.23e95cdabbf8cc92e38c.js" nomodule defer></script></body>
+</html>
